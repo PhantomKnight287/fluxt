@@ -4,7 +4,9 @@ import {
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
 import type { AppProps } from "next/app";
+import { UserContextComponent } from "@context/User";
 export default function App({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
   const toggleColorScheme = (value?: ColorScheme) =>
@@ -15,9 +17,17 @@ export default function App({ Component, pageProps }: AppProps) {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS >
-        <Component {...pageProps} />
-      </MantineProvider>
+      <NotificationsProvider>
+        <UserContextComponent>
+          <MantineProvider
+            theme={{ colorScheme }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <Component {...pageProps} />
+          </MantineProvider>
+        </UserContextComponent>
+      </NotificationsProvider>
     </ColorSchemeProvider>
   );
 }

@@ -11,7 +11,11 @@ const Home: NextPage = () => {
   useEffect(() => {
     socket.on("connect", () => {
       console.log("hello World");
-      socket.emit('hello')
+      socket.emit("login", {
+        username: "Phantom",
+        password: "hmm",
+        email: "6969@gmail.com",
+      });
     });
   }, []);
   return (

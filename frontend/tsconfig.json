@@ -20,7 +20,7 @@
       "@hooks/*": ["./hooks/*"],
       "@constants": ["./constants"],
       "@utils/*": ["./utils/*"],
-      "@types/*": ["./types/*"],
+      "@types": ["./types"],
       "@layout/*": ["./layout/*"],
       "@functions/*": ["./functions/*"],
       "@context/*": ["./context/*"]

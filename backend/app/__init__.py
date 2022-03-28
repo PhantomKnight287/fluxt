@@ -8,7 +8,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 socketio = SocketIO(app,cors_allowed_origins="*")
+from app import routes,socket,models
 
-from app import routes,socket
+db.create_all()
+
 
 app.run(debug=True, port=6969)
