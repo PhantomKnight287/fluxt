@@ -7,8 +7,8 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-socketio = SocketIO(app)
+socketio = SocketIO(app,cors_allowed_origins="*")
 
-from app import routes
+from app import routes,socket
 
 app.run(debug=True, port=6969)
