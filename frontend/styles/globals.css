@@ -7,10 +7,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: blue !important;
   text-decoration: none;
 }
-
+a:visited{
+  color: blue;
+}
 * {
   box-sizing: border-box;
 }

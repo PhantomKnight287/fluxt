@@ -13,3 +13,13 @@ export type LoginFormProps = {
   setPassword: Dispatch<SetStateAction<string>>;
   onSubmit: () => void;
 };
+
+export type SignupFormProps = {
+  email: string;
+  setEmail: Dispatch<SetStateAction<string>>;
+  username: string;
+  setUsername: Dispatch<SetStateAction<string>>;
+  password: string;
+  setPassword: Dispatch<SetStateAction<string>>;
+  onSubmit: () => void;
+};

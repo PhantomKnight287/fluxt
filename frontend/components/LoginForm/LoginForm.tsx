@@ -1,4 +1,4 @@
-import styles from "./LoginForm.module.scss";
+import Link from "next/link";
 import {
   TextInput,
   PasswordInput,
@@ -31,13 +31,9 @@ export default function LoginForm({
       </Title>
       <Text color="dimmed" size="sm" align="center" mt={5}>
         Do not have an account yet?{" "}
-        <Anchor<"a">
-          href="#"
-          size="sm"
-          onClick={(event) => event.preventDefault()}
-        >
-          Create account
-        </Anchor>
+        <Link href="/signup">
+          <a>Create An Account </a>
+        </Link>
       </Text>
 
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">

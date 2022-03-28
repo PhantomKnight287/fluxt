@@ -26,6 +26,7 @@ const LoginPage: NextPage = () => {
   };
   useEffect(() => {
     socket.on("login", (data) => {
+      console.log('data',data)
       if (data.status === "failed") notif("red", data.message, "Login Failed");
     });
   }, []);
