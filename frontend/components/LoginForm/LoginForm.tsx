@@ -8,16 +8,29 @@ import {
   Text,
   Paper,
   Button,
+  MantineColor,
 } from "@mantine/core";
 import { LoginFormProps } from "@types";
+import { useState } from "react";
+import { useNotifications } from "@mantine/notifications";
 
 export default function LoginForm({
-  onSubmit,
-  password,
-  setPassword,
-  setEmail,
-  email,
+  socket
 }: LoginFormProps) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { showNotification } = useNotifications();
+  const notif = (color: MantineColor, message: string, title?: string) => {
+    showNotification({ message, color, title, autoClose: true });
+  };
+  const onSubmit = () => {
+    if (!email)
+      return notif("red", "Please Enter Your Email", "Invalid Parameters");
+    if (!password)
+      return notif("red", "Please Enter Your Password", "Invalid Parameters");
+
+    socket.emit("login", { email, password });
+  };
   return (
     <Container size={420} my={40}>
       <Title

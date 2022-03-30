@@ -1,0 +1,25 @@
+.container{
+    margin-left: 2rem;
+    width: inherit;
+    height: inherit;
+    display:flex;
+    justify-content: baseline;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-bottom: 4rem;
+}
+.userInfo{
+    display:inline-flex;
+    gap:0.7rem;
+    &Holder{
+        display:flex;
+        flex-direction: row;
+    }
+}
+.message{
+    width:75%;
+    &Container{
+        font-size: large;
+        margin-left:2.4rem
+    }
+}
