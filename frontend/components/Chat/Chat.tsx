@@ -29,10 +29,13 @@ export default function Chat() {
             <div className={styles.message} key={message.id}>
               <div className={styles.userInfoHolder}>
                 <div className={styles.userInfo}>
-                  <Avatar /> {message.username}
+                  <Avatar radius="xl" />
                 </div>
               </div>
-              <div className={styles.messageContainer}>{message.message}</div>
+              <div className={styles.messageContainer}>
+                <span>{message.username}</span> <br/>
+                {message.message}
+              </div>
             </div>
           ))}
         </>

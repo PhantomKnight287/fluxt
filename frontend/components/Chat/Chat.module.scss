@@ -1,25 +1,33 @@
-.container{
-    margin-left: 2rem;
-    width: inherit;
-    height: inherit;
-    display:flex;
-    justify-content: baseline;
-    flex-direction: column;
-    overflow-y: scroll;
-    padding-bottom: 4rem;
+.container {
+  margin-left: 2rem;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: baseline;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-bottom: 4rem;
 }
-.userInfo{
-    display:inline-flex;
-    gap:0.7rem;
-    &Holder{
-        display:flex;
-        flex-direction: row;
-    }
+.userInfo {
+  display: inline-flex;
+  gap: 0.7rem;
+  &Holder {
+    display: flex;
+    width: max-content;
+    flex-direction: row;
+  }
 }
-.message{
-    width:75%;
-    &Container{
-        font-size: large;
-        margin-left:2.4rem
-    }
+.message {
+  max-width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  word-break: break-word;
+  word-wrap: break-word;
+
+  margin: 0.5rem;
+  &Container {
+    font-size: large;
+    margin-left: 1rem;
+  }
 }

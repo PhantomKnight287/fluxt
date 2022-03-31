@@ -1,7 +1,10 @@
 .inputContainer {
-  width: 90%;
-  margin-bottom: 1rem;
+  width: 75%;
+  padding-bottom: 1rem;
   margin-top: auto;
   position: fixed;
-  bottom:0
+  bottom:0;
+  display:block;
+  z-index: 2;
+  background-color: #1a1b1e;
 }
